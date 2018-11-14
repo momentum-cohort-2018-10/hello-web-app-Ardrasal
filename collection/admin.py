@@ -1,9 +1,9 @@
 from django.contrib import admin
-from collection.models import Places
+from collection.models import Place
 
-class PlacesAdmin(admin.ModelAdmin):
-    model = Places
+class PlaceAdmin(admin.ModelAdmin):
+    model = Place
     list_display = ('name', 'description',)
     prepopulated_fields = {'slug': ('name',)}
 
-admin.site.register(Places, PlacesAdmin)
+admin.site.register(Place, PlaceAdmin)
