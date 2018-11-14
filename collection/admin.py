@@ -1,3 +1,9 @@
 from django.contrib import admin
+from collection.models import Places
 
-# Register your models here.
+class PlacesAdmin(admin.ModelAdmin):
+    model = Places
+    list_display = ('name', 'description',)
+    prepopulated_fields = {'slug': ('name',)}
+
+admin.site.register(Places, PlacesAdmin)
