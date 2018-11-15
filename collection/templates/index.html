@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load humanize %}
+{% comment %} {% load humanize %} {% endcomment %}
 {% block title %}
     Homepage - {{ block.super }}
 {% endblock title %}
@@ -10,5 +10,5 @@
             {{ place.name }}
         </a></h2>
         <p>{{ place.description }}</p>
-        {% endfor %}
+    {% endfor %}
 {% endblock content %}

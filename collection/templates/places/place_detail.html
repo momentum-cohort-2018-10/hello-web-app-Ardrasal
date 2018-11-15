@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
-{% load humanize %}
+{% comment %} {% load humanize %} {% endcomment %}
 {% block title %}
     {{ place.name }} - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
-    {% for place in places %}
-        <h2>{{ place.name }}</h2>
+    {% comment %} {% for place in places %} {% endcomment %}
+        <h1>{{ place.name }}</h1>
         <p>{{ place.description }}</p>
-        {% endfor %}
+        {% comment %} {% endfor %} {% endcomment %}
+<a href="{% url 'edit_place' slug=place.slug %}">
+    Edit me!
+</a>
 {% endblock content %}
