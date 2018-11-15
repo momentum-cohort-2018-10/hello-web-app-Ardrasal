@@ -6,3 +6,10 @@ def index(request):
     return render(request, 'index.html', {
         'places': places,
     })
+
+def place_detail(request, slug):
+    place = Place.objects.get(slug=slug)
+    return render(request, 'places/place_detail.html', {
+        'place': place,
+
+    })

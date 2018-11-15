@@ -1,14 +1,12 @@
 {% extends 'base.html' %}
 {% load humanize %}
 {% block title %}
-    Homepage - {{ block.super }}
+    {{ place.name }} - {{ block.super }}
 {% endblock title %}
 
 {% block content %}
     {% for place in places %}
-        <h2><a href="{% url 'place_detail' slug=place.slug %}">
-            {{ place.name }}
-        </a></h2>
+        <h2>{{ place.name }}</h2>
         <p>{{ place.description }}</p>
         {% endfor %}
 {% endblock content %}
