@@ -1,9 +1,8 @@
 from django.shortcuts import render
+from collection.models import Place
 
 def index(request):
-    number = 6
-    place = "downtown"
+    places = Place.objects.all()
     return render(request, 'index.html', {
-        'number': number,
-        'place': place,
+        'places': places,
     })

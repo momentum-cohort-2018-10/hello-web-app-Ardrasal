@@ -5,6 +5,8 @@
 {% endblock title %}
 
 {% block content %}
-        <h1>What Makes Durham Fun?</h1>
-        <p>Where to go {{ place|truncatewords:1 }}</p>
+    {% for place in places %}
+        <h2>{{ place.name }}</h2>
+        <p>{{ place.description }}</p>
+        {% endfor %}
 {% endblock content %}
