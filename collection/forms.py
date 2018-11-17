@@ -5,4 +5,3 @@ class PlaceForm(ModelForm):
     class Meta:
         model = Place
         fields = ('name', 'description',)
-        
